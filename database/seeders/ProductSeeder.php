@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
                 'category' => 'electronics',
                 'gallery' => 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80'
             ],
-            [
+            [ 
                 'name' => 'Wireless Bluetooth Speaker',
                 'price' => 120,
                 'description' => 'Portable speaker with powerful bass and clear sound.',
