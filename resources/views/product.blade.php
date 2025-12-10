@@ -21,15 +21,16 @@
 
             @foreach ($products as $item)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                   <a href="detail/{{$item['id']}}">
-                 <img src="{{ $item['gallery'] }}" class="d-block mx-auto carousel-img" alt="{{ $item['name'] }}">
-                    
-                    <!-- Caption below image -->
-                    <div class="carousel-caption-below">
-                        <h3>{{ $item['name'] }}</h3>
-                        <p>{{ $item['description'] }}</p>
-                    </div>
-                </a>
+                    <a href="/detail/{{ $item->id }}">
+                        <img src="{{ $item->gallery }}"
+                             class="d-block mx-auto carousel-img"
+                             alt="{{ $item->name }}">
+                        
+                        <div class="carousel-caption-below">
+                            <h3>{{ $item->name }}</h3>
+                            <p>{{ $item->description }}</p>
+                        </div>
+                    </a>
                 </div>
             @endforeach
 
@@ -47,21 +48,21 @@
         </button>
 
     </div>
-  <div class="trending-wrapper">
-    <h1>Trending Products</h1>
 
-    <div class="trending-container">
-        @foreach ($products->take(5) as $item)
-            <div class="trending-item">
-                <a href="detail/{{ $item['id'] }}">
-                    <img class="trending-img" src="{{ $item['gallery'] }}">
-                    <h3>{{ $item['name'] }}</h3>
-                </a>
-            </div>
-        @endforeach
-    </div>
-</div>
+    {{-- Trending --}}
+    <div class="trending-wrapper mt-5">
+        <h1>Trending Products</h1>
 
+        <div class="row">
+            @foreach ($products->take(5) as $item)
+                <div class="col-sm-4 col-md-3 trending-item mt-4 text-center">
+                    <a href="/detail/{{ $item->id }}">
+                        <img class="trending-img" src="{{ $item->gallery }}" alt="{{ $item->name }}">
+                        <h4>{{ $item->name }}</h4>
+                    </a>
+                </div>
+            @endforeach
+        </div>
 
     </div>
 
