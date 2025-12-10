@@ -5,7 +5,7 @@
         <div class="col-sm-10">
             <div class="trending-wrapper">
                 <h2>Cart List</h2>
-                    <a href="/ordernow">Oder Now</a>
+                    <a class="" href="/ordernow">Oder Now</a>
                 <div class="row justify-content-center">
 
                     @foreach($products as $item)
